@@ -53,6 +53,22 @@ python app.py
 - The model file is included in this project. GitHub allows files up to 100 MB, and this model is within that limit.
 - This project is for educational use and not for medical diagnosis.
 
+
+1. PrerequisitesMake sure you have Git installed on your machine. You can verify this by running:bash
+```powershell
+git --version
+```
+2. Clone the RepositoryOn GitHub.com, navigate to the main page of the repository.Above the list of files, click the green Code button.Copy the URL for the repository (HTTPS is recommended for beginners):
+
+https://github.comOpen your terminal (or Command Prompt).Change the current working directory to the location where you want the cloned directory.Type git clone, and then paste the URL you copied earlier:bashgit clone https://github.com
+```powershell
+git clone https://github.com/aldren0o0o0-ui/x_ray_classifier.git
+```
+Press Enter to create your local clone.
+3. Navigate to the ProjectMove into the project directory to start working
+```powershell
+ cd x_ray_classifier
+```
 ## Push to GitHub
 
 Run these commands inside the `pnuenomia` folder after creating an empty GitHub repository:
