@@ -62,6 +62,6 @@ git init
 git branch -M main
 git add .
 git commit -m "Initial commit"
-git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
+git remote add origin https://github.com/aldren0o0o0-ui/x_ray_classifier.git
 git push -u origin main
 ```
