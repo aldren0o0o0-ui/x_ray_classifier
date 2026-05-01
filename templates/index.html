@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chest X-Ray Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>Chest X-Ray Classification</h1>
+        <p class="subtitle">COVID-19, Normal, and Pneumonia Detection using MobileNetV2</p>
+
+        <form method="POST" enctype="multipart/form-data" class="upload-form">
+            <label for="image" class="upload-box">
+                <span>Upload Chest X-Ray Image</span>
+                <input type="file" name="image" id="image" accept="image/*" required>
+            </label>
+
+            <button type="submit">Analyze X-Ray</button>
+        </form>
+
+        {% if image_url %}
+        <div class="result-section">
+            <div class="image-preview">
+                <img src="{{ image_url }}" alt="Uploaded X-ray">
+            </div>
+
+            <div class="result-card">
+                <h2>Prediction Result</h2>
+
+                <div class="prediction">
+                    {{ prediction }}
+                </div>
+
+                <p class="confidence">
+                    Confidence: <strong>{{ confidence }}%</strong>
+                </p>
+
+                <div class="scores">
+                    {% for label, score in scores.items() %}
+                    <div class="score-item">
+                        <div class="score-header">
+                            <span>{{ label }}</span>
+                            <span>{{ score }}%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: {{ score }}%;"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <p class="warning">
+            This system is for educational purposes only and should not be used as a final medical diagnosis.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
